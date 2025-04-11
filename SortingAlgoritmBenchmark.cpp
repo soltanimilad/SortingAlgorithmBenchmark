@@ -284,10 +284,10 @@ private:
             copy(originalArray, originalArray + i, CopyForRadixSort);
             copy(originalArray, originalArray + i, CopyForInsertionSort);
 
-            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1);
-            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1);
-            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i);
-            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i);
+            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1) * 1000;
+            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1) * 1000;
+            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i) * 1000;
+            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i) * 1000;
 
             delete[] CopyForQuickSort;
             delete[] CopyForMergeSort;
@@ -340,10 +340,10 @@ private:
             copy(originalArray, originalArray + i, CopyForRadixSort);
             copy(originalArray, originalArray + i, CopyForInsertionSort);
 
-            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1);
-            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1);
-            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i);
-            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i);
+            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1) * 1000;
+            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1) * 1000;
+            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i) * 1000;
+            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i) * 1000;
 
             delete[] CopyForQuickSort;
             delete[] CopyForMergeSort;
@@ -368,10 +368,10 @@ private:
             copy(originalArray, originalArray + i, CopyForRadixSort);
             copy(originalArray, originalArray + i, CopyForInsertionSort);
 
-            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1);
-            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1);
-            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i);
-            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i);
+            double QuickSortTime = CountingMilliSecondsForQuickSort(CopyForQuickSort, 0, i - 1) * 1000;
+            double MergeSortTime = CountingMilliSecondsForMergeSort(CopyForMergeSort, 0, i - 1) * 1000;
+            double RadixSortTime = CountingMilliSecondsForRadixSort(CopyForRadixSort, i) * 1000;
+            double InsertionSortTime = CountingMilliSecondsForInsertionSort(CopyForInsertionSort, i) * 1000;
 
             delete[] CopyForQuickSort;
             delete[] CopyForMergeSort;
