@@ -396,7 +396,13 @@ public:
 
     static void Start()
     {
+        auto start = chrono::high_resolution_clock::now();
         CalculateTime();
+        auto end = chrono::high_resolution_clock::now();
+        chrono::duration<double> tick = end - start;
+        double TotalTime = tick.count() * 1000;
+        csvfile.open("Result.csv", ios::app);
+        csvfile << "Total," << TotalTime << endl;
     }
 };
 
