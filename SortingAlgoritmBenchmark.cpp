@@ -188,8 +188,8 @@ private:
 public:
     static void Radixsort(int *arr, int n)
     {
-        int m = GetMax(arr, n);
-        for (int exp = 1; m / exp > 0; exp *= 10)
+        int max = GetMax(arr, n);
+        for (int exp = 1; max / exp > 0; exp *= 10)
             countSort(arr, n, exp);
     }
 };
@@ -270,8 +270,8 @@ private:
     {
         for (int i = 10; i <= 100; i += 10)
         {
-            Arrays tempArray(i);
-            int *originalArray = tempArray.getArray();
+            Arrays *tempArray = new Arrays(i);
+            int *originalArray = tempArray->getArray();
 
             // Create copies
             int *CopyForQuickSort = new int[i];
@@ -293,14 +293,15 @@ private:
             delete[] CopyForMergeSort;
             delete[] CopyForRadixSort;
             delete[] CopyForInsertionSort;
+            delete tempArray;
 
             LoadToFile(i, QuickSortTime, MergeSortTime, RadixSortTime, InsertionSortTime);
         }
 
         for (int i = 200; i <= 1000; i += 100)
         {
-            Arrays tempArray(i);
-            int *originalArray = tempArray.getArray();
+            Arrays *tempArray = new Arrays(i);
+            int *originalArray = tempArray->getArray();
 
             int *CopyForQuickSort = new int[i];
             int *CopyForMergeSort = new int[i];
@@ -321,14 +322,15 @@ private:
             delete[] CopyForMergeSort;
             delete[] CopyForRadixSort;
             delete[] CopyForInsertionSort;
+            delete tempArray;
 
             LoadToFile(i, QuickSortTime, MergeSortTime, RadixSortTime, InsertionSortTime);
         }
 
         for (int i = 2000; i <= 10000; i += 1000)
         {
-            Arrays tempArray(i);
-            int *originalArray = tempArray.getArray();
+            Arrays *tempArray = new Arrays(i);
+            int *originalArray = tempArray->getArray();
 
             int *CopyForQuickSort = new int[i];
             int *CopyForMergeSort = new int[i];
@@ -349,14 +351,15 @@ private:
             delete[] CopyForMergeSort;
             delete[] CopyForRadixSort;
             delete[] CopyForInsertionSort;
+            delete tempArray;
 
             LoadToFile(i, QuickSortTime, MergeSortTime, RadixSortTime, InsertionSortTime);
         }
 
         for (int i = 20000; i <= 100000; i += 10000)
         {
-            Arrays tempArray(i);
-            int *originalArray = tempArray.getArray();
+            Arrays *tempArray = new Arrays(i);
+            int *originalArray = tempArray->getArray();
 
             int *CopyForQuickSort = new int[i];
             int *CopyForMergeSort = new int[i];
@@ -377,6 +380,7 @@ private:
             delete[] CopyForMergeSort;
             delete[] CopyForRadixSort;
             delete[] CopyForInsertionSort;
+            delete tempArray;
 
             LoadToFile(i, QuickSortTime, MergeSortTime, RadixSortTime, InsertionSortTime);
         }
@@ -386,7 +390,7 @@ public:
     ProgramInterface()
     {
         csvfile.open("Result.csv", ios::out | ios::trunc);
-        csvfile << "Range,Quick Sort,Merge Sort,Radix Sort,Insertion Sort\n";
+        csvfile << "Range\t,Quick Sort\t,Merge Sort\t,Radix Sort\t,Insertion Sort\t\n";
         csvfile.close();
     }
 
